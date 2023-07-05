@@ -26,3 +26,24 @@ Interact with the Token Contract:
 
 After deploying the contract, you can interact with it by calling its functions or accessing its state variables.
 Use tools like Remix IDE, Web3.js, or ethers.js to interact with the contract and perform token transfers or other operations.
+
+
+contract MyToken {
+    string public tokenName="Ashish";
+    string public tokenarr ="Ah";
+    uint public totalSupply = 0;
+    //mapping variable here
+    mapping(address => uint) public balanceof;
+    //mint function
+   function mint(address _address, uint _value) public{
+        totalSupply += _value;
+        balanceof[_address] += _value; 
+   }
+         //burn function
+    function burn (address _address, uint _value) public{
+        totalSupply -= _value;
+        balanceof[_address] -= _value;
+    }
+}
+
+
